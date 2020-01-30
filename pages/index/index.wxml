@@ -4,3 +4,16 @@
 <open-data type="userAvatarUrl"></open-data>
 <text>全局变量</text>
 <view>{{global_data}}</view>
+
+<!-- 默认情况下，text中的文本是不能选中的-->
+<text selectable="{{true}}">可以选中的文本框</text>
+<text selectable>缺省属性值true</text>
+
+<!-- space 文本空格的大小 -->
+<view>文本空格的大小</view>
+<text>h e l l o  w o r l d\n</text>
+<text space="nbsp">h e l l o  w o r l d\n</text>
+<text space="ensp">h e l l o  w o r l d\n</text>
+<text space="emsp">h e l l o  w o r l d\n</text>
+
+
