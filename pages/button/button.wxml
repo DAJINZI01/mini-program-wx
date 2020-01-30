@@ -1,0 +1,20 @@
+<!--pages/button/button.wxml-->
+
+<!-- button 基本使用 -->
+<button>按钮</button>
+
+<!-- size属性 -->
+<button size="mini">小按钮1</button>
+<button size="mini">小按钮2</button>
+<!-- type属性 -->
+<button type="primary">按钮A</button>
+<button type="default">按钮B</button>
+<button type="warn">按钮C</button>
+<!-- plain -->
+<button plain>按钮</button>
+<!-- disabled -->
+<button disabled>不可用按钮</button>
+<!-- loading -->
+<button loading>loading...</button>
+<!-- hover-class -->
+<button hover-class="pressed">改变默认样式</button>

@@ -16,4 +16,6 @@
 <text space="ensp">h e l l o  w o r l d\n</text>
 <text space="emsp">h e l l o  w o r l d\n</text>
 
+<!-- decode 解码文本 -->
+<text decode>5 &gt; 3</text>
 
