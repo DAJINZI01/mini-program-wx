@@ -1,0 +1,72 @@
+<!--pages/wxml/index.wxml-->
+
+<!-- 一个简单的文本标签 -->
+<text>pages/wxml/index.wxml</text>
+<!-- view中包含了text标签 -->
+<view><text>pages/wxml/index.wxml</text></view>
+<!-- 带有属性的图片标签 -->
+<image class="userinfo-avator" src="./images/1.jpg"></image>
+<!-- 数据绑定示例 -->
+<text>当前时间：{{time}}</text>
+
+<!-- 逻辑语法 -->
+<!-- 三目运算法 -->
+<text>{{a === 10 ? "a等于10": "a不等于10"}}</text>
+<!-- 数值运算 -->
+<text>{{a+b+c}}</text>
+<!-- 字符串拼接 -->
+<text>{{"hello"+name}}</text>
+<!-- 直接放 数字、字符串、数组 -->
+<text>{{[1, "helloworl", [11, 22, 33]]}}</text>
+<!-- 条件逻辑 -->
+<view wx:if="{{condition}}">条件逻辑</view>
+<view wx:if="{{length < 3}}">多分支判断 if</view>
+<view wx:elif="{{length < 5}}">elif</view>
+<view wx:else>else</view>
+<block wx:if="{{condition}}">
+    <view>view1</view>
+    <view>view2</view>
+</block>
+<!-- 列表渲染 -->
+<view wx:for="{{students}}">
+    {{index}}: {{[item.name, item.age]}}
+</view>
+<view wx:for="{{students}}" wx:for-index="idx" wx:for-item="stu">
+    {{idx}}: {{[stu.name, stu.age]}}
+</view>
+<block wx:for="{{[1, 2, 3]}}">
+    <view>{{index}}</view>
+    <view>{{item}}</view>
+</block>
+<!-- 列表中项目的位置动态改变或有新的项目插入 -->
+<switch wx:for="{{objectArray}}" wx:key="unique">{{item.id}}</switch>
+<button bindtap="switch">switch</button>
+
+<button bindtap="addToFront"> Add to the front </button>
+
+<switch wx:for="{{numberArray}}" wx:key="*this" > {{item}} </switch>
+<button bindtap="addNumberToFront"> Add Number to the front </button>
+<!-- 模板 -->
+<template name="msgItem">
+    <view>{{index}}: {{msg}}</view>
+    <view>time: {{time}}</view>
+</template>
+
+<template is="msgItem" data="{{...item}}"/>
+<!-- 动态使用模板 -->
+<template name="odd"><view>odd</view></template>
+<template name="even"><view>even</view></template>
+<block wx:for="{{[1, 2, 3, 4, 5]}}">
+<template is="{{item % 2 === 0 ? 'even': 'odd'}}"/>
+</block>
+<!-- 引用 -->
+<!-- import -->
+<import src="./item.wxml"/>
+<template is="item" data="{{text: '张三'}}"/>
+<!-- include -->
+<include src="./header.wxml"/>
+<include src="./footer.wxml"/>
+<!-- 内联样式 -->
+<view style="color: cyan; font-size: 48rpx;">你好，中国</view>
+<!-- 动态样式 -->
+<view style="color: {{color}}; font-size: {{fontsize}};">2020,过年快乐</view>

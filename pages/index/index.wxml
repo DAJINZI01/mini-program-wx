@@ -1,0 +1,6 @@
+<text>获取用户的信息</text>
+<button open-type="getUserInfo" bindgetuserinfo="handleUserInfo">获取用户信息</button>
+<open-data type="userNickName"></open-data>
+<open-data type="userAvatarUrl"></open-data>
+<text>全局变量</text>
+<view>{{global_data}}</view>
