@@ -1,0 +1,6 @@
+<!--pages/view/view.wxml-->
+<!-- view的基本使用 块级容器独占一行-->
+<view class="v1">这是view组件</view>
+<view hover-class="v1"><text>容器包含其他组件</text></view>
+<view hover-class="v1" hover-stay-time="{{0}}"><text>容器包含其他组件</text></view>
+<view hover-class="v1"><view hover-stop-propagation><text>容器包含其他组件</text></view></view>

@@ -1,0 +1,12 @@
+/* pages/input/input.wxss */
+
+input {
+    border: 1px solid green;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    height: 40px;
+    color: cyan;
+    font-size: 30px;
+    padding-left: 20px;
+    width: 200px;
+}

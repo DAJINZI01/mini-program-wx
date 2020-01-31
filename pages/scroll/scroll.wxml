@@ -1,0 +1,14 @@
+<!--pages/scroll/scroll.wxml-->
+
+<!-- 1. 水平滚动 scroll-x -->
+<scroll-view scroll-x class="container1">
+    <view wx:for="{{10}}" class="item1">{{item}}</view>
+</scroll-view>
+<!-- 2. 垂直滚动 scroll-y -->
+<button bindtap="chooseAlbum">选择一张图片</button>
+<scroll-view scroll-y class="container2" bindscroll="handlescroll">
+    <view wx:for="{{imagePath}}" class="item2">
+        <image src="{{item}}" widthFix/>
+    </view>
+</scroll-view>
+

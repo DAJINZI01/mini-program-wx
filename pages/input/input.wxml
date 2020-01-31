@@ -1,0 +1,17 @@
+<!--pages/input/input.wxml-->
+<!-- input的基本使用 -->
+<input/>
+<!-- value 默认值 -->
+<input value="请输入用户名"/>
+<!-- type -->
+<input type=""idcard/>
+<!-- password -->
+<input password/>
+<!-- placeholder -->
+<input placeholder="请输入密码"/>
+<!-- maxlength -->
+<input maxlength="3"/>
+<!-- confirm-type -->
+<input confirm-type="send"/>
+<!-- bindinput -->
+<input bindinput="handleinput" bindfocus="handlefocus" bindblur="handleblur"/>

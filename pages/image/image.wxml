@@ -1,0 +1,17 @@
+<!--pages/image/image.wxml-->
+<!-- 
+    image默认有自己的大小 320x240
+    type: inline-block，可以设置大小
+    src: 本地地址，网络地址
+-->
+
+<image src="../../images/1.jpg"/><text>我是图片</text>
+<image src="http://t9.baidu.com/it/u=1761131378,1355750940&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg?sec=1580996044&t=e637b310287bfd23dfd88555afd10864"/>
+
+<!-- 选择相册中的图片 -->
+<!-- 按钮 -->
+<button bindtap="chooseAlbum">选择一张图片</button>
+<block wx:for="{{imagePath}}" wx:key="index">
+    <image src="{{item}}" mode="widthFix"/>
+</block>
+
