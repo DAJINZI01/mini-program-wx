@@ -1,0 +1,5 @@
+<!--components/myevent/myevent.wxml-->
+<view>
+    <view class="num">{{dnum}}</view>
+    <button class="btn" bindtap="handleSum"> + 1 </button>
+</view>

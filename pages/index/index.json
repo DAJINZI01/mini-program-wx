@@ -1,3 +1,10 @@
 {
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "mystyle": "/components/mystyle/mystyle",
+        "myproperty": "/components/myproperty/myproperty",
+        "myevent": "/components/myevent/myevent",
+        "tab-control": "/components/tab-control/tab-control",
+        "my-slot": "/components/my-slot/my-slot"
+    }
 }

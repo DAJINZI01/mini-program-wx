@@ -1,0 +1,27 @@
+/* components/tab-control/tab-control.wxss */
+
+
+
+
+
+.container {
+    display: flex;
+    background: rgb(241, 237, 240);
+}
+.item {
+    flex: 1;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    color: green;
+    margin: 0 5rpx;
+    /* background: rgb(241, 193, 102); */
+}
+
+.active {
+    color: rgb(241, 83, 83);
+    height: 85rpx;
+    display: inline-block;
+    padding: 0 10rpx;
+    border-bottom: solid 5rpx rgb(206, 66, 66);
+}

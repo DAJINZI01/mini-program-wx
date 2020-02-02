@@ -1,0 +1,2 @@
+<!--components/cpn1/cpn1.wxml-->
+<view class=".view">组件包含组件</view>

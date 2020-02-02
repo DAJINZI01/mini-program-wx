@@ -1,6 +1,43 @@
-<text>获取用户的信息</text>
+<!-- <text>获取用户的信息</text>
 <button open-type="getUserInfo" bindgetuserinfo="handleUserInfo">获取用户信息</button>
 <open-data type="userNickName"></open-data>
 <open-data type="userAvatarUrl"></open-data>
 <text>全局变量</text>
-<view>{{global_data}}</view>
+<view>{{global_data}}</view> -->
+
+<!-- 使用自定义组件
+    名称只能包含小写字母，中划线，下划线
+ -->
+<!-- <my-cpn-1/> -->
+<!-- 
+    自定义组件的样式细节
+    会将样式自动导入，后导入的优先级高。
+ -->
+ <!-- <view>首页view</view> -->
+<!-- <mystyle/> -->
+<!-- 
+    自定义组件和页面之间的通信
+    properties
+    externalClasses
+    slot
+ -->
+ <!-- <myproperty title="组件和页面通信" content="这是里面的内容，可以通过js里面的setData()方法进行修改这里面的值"/> -->
+
+ <!-- <myproperty tc="tc"/> -->
+<!-- <myevent num="{{index_num}}" bind:increment="handleSum"/> -->
+<!-- 小案例 -->
+<view class="body">
+    <view class="title"><text class="ttitle"><text>欢迎</text> IT 幻云商品铺子</text></view>
+    <tab-control items="{{goods}}" bind:getItemIndex="handleItem"/>
+    <myevent class="myevent" bind:increment="handleIncrement"/>
+</view>
+<!-- 
+    单个插槽的使用
+ -->
+<block wx:if="{{isShow}}">
+    <my-slot>
+        <button slot="slot-content">slot</button>
+        <button slot="slot-content">slot</button>
+    </my-slot> 
+</block>
+<button bindtap="handleIsShow">{{isShowMsg[index]}}</button>

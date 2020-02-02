@@ -1,5 +1,9 @@
 {
     "pages": [
-      "pages/index/index"
-    ]
+        "pages/index/index"
+    ],
+    "usingComponents": {
+        "my-cpn-1": "/components/my-cpn/my-cpn"
+    },
+    "sitemapLocation": "sitemap.json"
 }

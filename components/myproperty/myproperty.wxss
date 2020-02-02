@@ -1,0 +1,15 @@
+/* components/myproperty/myproperty.wxss */
+.title {
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    /* background: #aa0044; */
+    color: white;
+}
+.content {
+    height: 400rpx;
+    text-align: center;
+    background: #666;
+    color: #ccc;
+    padding-top: 20rpx;
+}

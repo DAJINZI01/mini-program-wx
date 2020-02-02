@@ -1,0 +1,9 @@
+/* components/mystyle/mystyle.wxss */
+.view {
+    height: 100rpx;
+    background: rgb(110, 156, 201);
+}
+
+.button {
+    background: rgb(159, 139, 228);
+}
