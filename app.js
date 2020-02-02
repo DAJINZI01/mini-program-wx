@@ -1,43 +1,59 @@
+const TOKEN = "token"
+
 // 注册一个小程序实例
 App({
+    globalData: {
+        token: ""
+    },
+    onLaunch: function(){
+        // 1. 从本地取出token
+        const token = wx.getStorageSync(TOKEN)
+        if(token && token.length){
+            // 验证token是否过期
+            this.check_token(token)
+        }else{
+            // 2. 登录操作
+            // code 只有5分钟的有效期
+            this.myLogin()
+        } 
+    },
+    check_token: function(token){
+        wx.request({
+            url: 'http://123.207.32.32:3000/auth',
+            header: {
+                token: token,
+            },
+            method: "post",
+            success: function(res){
+                console.log(res.data.message)
+            },
+            fail: function(res){
+                console.log(res)
+            }
 
-  /**
-   * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
-   */
-  onLaunch: function (options) {
-    console.log(options)
-    // 获取用户信息，并将用户信息传给服务器
-    wx.getUserInfo({
-        success: function (res) {
-            console.log(res)
-        }
-    })
-  },
+        })
+    },
+    myLogin: function(){
+        wx.login({
+            success: (res) => {
+                // 1. 获取code
+                const code = res.code
+                // 2. 获取token，向自己的服务器发送请求
+                wx.request({
+                    url: 'http://123.207.32.32:3000/login',
+                    method: "post",
+                    data: {
+                        code: code
+                    },
+                    success: (res) => {
+                        this.globalData.token = res.data.token
+                        console.log(this.globalData.token)
+                        // 3. 本地存储
+                        wx.setStorageSync(TOKEN, this.globalData.token)
+                    },
+                })
+            }
+        })
+    }
+});
 
-  /**
-   * 当小程序启动，或从后台进入前台显示，会触发 onShow
-   */
-  onShow: function (options) {
-    // console.log(options)
-
-  },
-
-  /**
-   * 当小程序从前台进入后台，会触发 onHide
-   */
-  onHide: function () {
-    
-  },
-
-  /**
-   * 当小程序发生脚本错误，或者 api 调用失败时，会触发 onError 并带上错误信息
-   */
-  onError: function (msg) {
-    
-  },
-  global_data: {
-      name: "张小凡",
-      age: 20,
-
-  },
-})

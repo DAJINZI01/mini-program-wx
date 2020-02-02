@@ -1,6 +1,8 @@
-<text>获取用户的信息</text>
-<button open-type="getUserInfo" bindgetuserinfo="handleUserInfo">获取用户信息</button>
-<open-data type="userNickName"></open-data>
-<open-data type="userAvatarUrl"></open-data>
-<text>全局变量</text>
-<view>{{global_data}}</view>
+<!-- 1. toast -->
+<view>页面弹窗</view>
+<button size="mini" bindtap="showToast">显示弹窗</button>
+<button size="mini" bindtap="showModal">显示模态对话框</button>
+<button size="mini" bindtap="showLoading">显示加载</button>
+<button size="mini" bindtap="showActionSheet">显示操作菜单</button>
+<view>页面分享</view>
+<button size="mini" open-type="share">转发</button>
